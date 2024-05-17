@@ -13,6 +13,14 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontal;
 
+    [SerializeField]
+    private float jumpMax;
+    [SerializeField]
+    private float jumpMin;
+    [SerializeField]
+    private float jumpCurrent;
+    [SerializeField]
+    private float jumpAcceleration;
 
     public bool isGrounded;
 
@@ -36,22 +44,33 @@ public class PlayerMovement : MonoBehaviour
         if (!isGrounded)
         {
             transform.Rotate(transform.forward, horizontal * rotationSpeed * Time.deltaTime);
+            
         }
         if (isGrounded)
         {
-            transform.RotateAround(pivotPoint.transform.forward, transform.forward, -horizontal * rotationSpeed * Time.deltaTime);
-            //pivotPoint.GetComponent<Rigidbody2D>().isKinematic = true;
+            transform.RotateAround(pivotPoint.transform.position, transform.forward, -horizontal * rotationSpeed * Time.deltaTime);
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = 0;
+            rb.isKinematic = true;
+            
+            //pivotPoint.transform.position = pivotPoint.GetComponent<GroundChecker>().landedPos;
         }
 
 
-
+        if(Input.GetKey(KeyCode.Space))
+        {
+            jumpCurrent += jumpAcceleration;
+            jumpCurrent = Mathf.Clamp(jumpCurrent, jumpMin, jumpMax);
+        }
 
 
         if (isGrounded && Input.GetKeyUp(KeyCode.Space))
         {
-            //pivotPoint.GetComponent<Rigidbody2D>().isKinematic = false;
-            rb.AddForce(transform.up * 10, ForceMode2D.Impulse);
+            rb.isKinematic = false;
+
+            rb.AddForce(-transform.up * jumpCurrent, ForceMode2D.Impulse);
             isGrounded = false;
+            jumpCurrent = jumpMin;
         }
 
 
