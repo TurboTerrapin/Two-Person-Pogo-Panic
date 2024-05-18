@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isGrounded)
         {
-            transform.Rotate(transform.forward, horizontal * rotationSpeed * Time.deltaTime);
+            transform.Rotate(transform.forward, -horizontal * rotationSpeed * Time.deltaTime);
             
         }
         if (isGrounded)
