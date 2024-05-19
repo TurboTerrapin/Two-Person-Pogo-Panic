@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivotPoint: {fileID: 4684662469142760441}
+  respawnPoint: {fileID: 0}
   jumpMax: 10
   jumpMin: 2
   jumpCurrent: 2

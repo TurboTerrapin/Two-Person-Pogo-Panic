@@ -779,6 +779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: DrawingMap
+  resetTimer: 1
+  timer: {fileID: 0}
 --- !u!4 &2054383344
 Transform:
   m_ObjectHideFlags: 0

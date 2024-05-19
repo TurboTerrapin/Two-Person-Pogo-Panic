@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour
 {
-
-    [SerializeField]
     public string nextLevel;
 
+    [SerializeField]
+    private bool resetTimer;
 
+    [SerializeField]
+    private Timer timer;
+
+    private void Start()
+    {
+        timer = FindFirstObjectByType<Timer>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +28,11 @@ public class NextLevel : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
+        if(resetTimer)
+        {
+            Destroy(timer.gameObject.transform.parent.gameObject);
+        }
+
         SceneManager.LoadScene(sceneName);
     }
 }
