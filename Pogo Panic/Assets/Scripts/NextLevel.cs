@@ -7,7 +7,7 @@ public class NextLevel : MonoBehaviour
 {
 
     [SerializeField]
-    private string nextLevel;
+    public string nextLevel;
 
 
 
@@ -19,4 +19,8 @@ public class NextLevel : MonoBehaviour
         }
     }
 
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

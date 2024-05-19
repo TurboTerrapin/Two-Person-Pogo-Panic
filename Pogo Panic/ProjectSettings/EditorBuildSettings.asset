@@ -11,5 +11,14 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/DrawingLevel2.unity
+    guid: 8d4528e3dd5c31d419ecbe67ebb2333b
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: 322817d6053c2b84883d427dfe553cfb
+  - enabled: 1
+    path: Assets/Scenes/DrawingLevel3.unity
+    guid: ce84bb2f5fb49c04ab125c4b7b2d416c
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
