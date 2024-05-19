@@ -233,6 +233,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1889284450632628920, guid: 84a8ce646526f6842af0887b91b25e12, type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 2829856263656471357}
     - target: {fileID: 3496335495436107416, guid: 84a8ce646526f6842af0887b91b25e12, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1341,6 +1345,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0237536c504ca4141b2279e61732796f, type: 3}
+--- !u!1 &2829856263656471357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5978058820941655426, guid: 0237536c504ca4141b2279e61732796f, type: 3}
+  m_PrefabInstance: {fileID: 2829856263656471356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4827463615753904561
 PrefabInstance:
   m_ObjectHideFlags: 0

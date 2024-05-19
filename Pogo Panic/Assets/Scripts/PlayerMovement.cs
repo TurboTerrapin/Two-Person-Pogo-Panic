@@ -8,6 +8,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject pivotPoint;
 
+    [SerializeField]
+    private GameObject respawnPoint;
+
+    private Quaternion rotation;
 
     private Rigidbody2D rb;
 
@@ -33,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         isGrounded = false;
+        rotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -71,6 +76,12 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(-transform.up * jumpCurrent, ForceMode2D.Impulse);
             isGrounded = false;
             jumpCurrent = jumpMin;
+        }
+        
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            transform.position = respawnPoint.transform.position;
+            transform.rotation = rotation;
         }
 
 
